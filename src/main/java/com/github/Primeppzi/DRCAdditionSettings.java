@@ -1,10 +1,5 @@
 package com.github.Primeppzi;
-
-import carpet.settings.ParsedRule;
 import carpet.settings.Rule;
-import carpet.settings.Validator;
-import net.minecraft.server.command.ServerCommandSource;
-
 import static carpet.settings.RuleCategory.*;
 
 
@@ -14,7 +9,6 @@ import static carpet.settings.RuleCategory.*;
 public class DRCAdditionSettings
 {
     public static final String DRC="DRC";
-    public static final String CARPET_MOD = "carpet_mod";
 
 
     @Rule(
@@ -36,4 +30,10 @@ public class DRCAdditionSettings
             category = {DRC,EXPERIMENTAL}
     )
     public static boolean forceExpMerge = false;
+    @Rule(
+            desc="Glow after eating glow berries",
+            extra={"Add glow effect to players after eating glow berries"},
+            category = {DRC,FEATURE}
+    )
+    public static boolean glowGlowBerries = false;
 }
