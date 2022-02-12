@@ -20,4 +20,4 @@ ___
 ## 外部参考
 > 这里可以po一些相关资料（如mod编写类），方便查阅
 
-* [(啥都不是)]()
+* [Markdown教程](https://www.runoob.com/markdown/md-tutorial.html)
