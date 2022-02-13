@@ -32,7 +32,7 @@ public abstract class ExperienceOrbEntityMixin {
     }
 
     /**
-     * @Prime_ppzi
+     * @author Prime_ppzi
      */
     @Overwrite
     private void merge(ExperienceOrbEntity other) {

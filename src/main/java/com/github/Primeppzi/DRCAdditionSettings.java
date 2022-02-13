@@ -1,5 +1,9 @@
 package com.github.Primeppzi;
+import carpet.settings.ParsedRule;
 import carpet.settings.Rule;
+import carpet.settings.Validator;
+import net.minecraft.server.command.ServerCommandSource;
+
 import static carpet.settings.RuleCategory.*;
 
 
@@ -36,4 +40,13 @@ public class DRCAdditionSettings
             category = {DRC,FEATURE}
     )
     public static boolean glowGlowBerries = false;
+
+    @Rule(
+            desc = "Chance of shooting a blue skull for withers",
+            category = {DRC,EXPERIMENTAL},
+            options = {"0","0.001","1"},
+            validate = Validator.PROBABILITY.class,
+            strict = false
+    )
+    public static double witherskullchance = 0.001;
 }
