@@ -43,10 +43,17 @@ public class DRCAdditionSettings
 
     @Rule(
             desc = "Chance of shooting a blue skull for withers",
-            category = {DRC,EXPERIMENTAL},
+            category = {DRC,EXPERIMENTAL,CREATIVE},
             options = {"0","0.001","1"},
             validate = Validator.PROBABILITY.class,
             strict = false
     )
     public static double witherskullchance = 0.001;
+
+    @Rule(
+            desc="Show weather in command",
+            extra={"Show the weather in text form in the command line,available when cheating is disabled"},
+            category = {DRC,SURVIVAL,COMMAND}
+    )
+    public static boolean tellweather = false;
 }
