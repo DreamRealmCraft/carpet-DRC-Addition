@@ -56,4 +56,35 @@ public class DRCAdditionSettings
             category = {DRC,SURVIVAL,COMMAND}
     )
     public static boolean tellweather = false;
+    @Rule(
+            desc = "disable ice forming",
+            category = {DRC,CREATIVE}
+    )
+    public static boolean disableiceforming = false;
+    @Rule(
+            desc = "disable snow forming",
+            category = {DRC,CREATIVE}
+    )
+    public static  boolean disablesnowforming = false;
+    @Rule(
+            desc = "Modify the explosion power of TNT",
+            category = {DRC,EXPERIMENTAL,CREATIVE},
+            options = {"0","4.0"},
+            validate = Validator.NONNEGATIVE_NUMBER.class,
+            strict = false
+    )
+    public static double TntExplosionPower = 4.0F;
+    @Rule(
+            desc = "Modify the fuse time of TNT",
+            category = {DRC,EXPERIMENTAL,CREATIVE},
+            options = {"0","80"},
+            validate = Validator.NONNEGATIVE_NUMBER.class,
+            strict = false
+    )
+    public static double TntFuseTime = 80;
+    @Rule(
+            desc = "explosion in fluid",
+            category = {DRC,EXPERIMENTAL,CREATIVE}
+    )
+    public static boolean ExplosionInFluid = false;
 }

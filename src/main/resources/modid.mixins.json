@@ -7,7 +7,9 @@
     "GlowSquidEntityMixin",
     "ExperienceOrbEntityMixin",
     "GlowingBerriesMixin",
-    "WitherMixin"
+    "WitherMixin",
+    "BiomeMixin",
+    "TntEntityMixin",
 
   ],
   "client": [
