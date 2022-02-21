@@ -19,7 +19,7 @@ public abstract class VillagerEntityMixin {
     }
     public void villagerdetach(){
         VillagerEntity villager = (VillagerEntity) (Object)this;
-        if(villager.hasVehicle() &&villager.getVehicle().getType() == EntityType.CHICKEN){
+        if(villager.hasVehicle() &&villager.getVehicle().getType() == EntityType.CHICKEN && DRCAdditionSettings.disableVillagerJockey){
             villager.detach();
         }
     }
