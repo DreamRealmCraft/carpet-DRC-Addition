@@ -73,7 +73,7 @@ public class DRCAdditionSettings
             validate = Validator.NONNEGATIVE_NUMBER.class,
             strict = false
     )
-    public static double TntExplosionPower = 4.0F;
+    public static double tntExplosionPower = 4.0F;
     @Rule(
             desc = "Modify the fuse time of TNT",
             category = {DRC,EXPERIMENTAL,CREATIVE},
@@ -81,10 +81,15 @@ public class DRCAdditionSettings
             validate = Validator.NONNEGATIVE_NUMBER.class,
             strict = false
     )
-    public static double TntFuseTime = 80;
+    public static double tntFuseTime = 80;
     @Rule(
             desc = "explosion in fluid",
             category = {DRC,EXPERIMENTAL,CREATIVE}
     )
-    public static boolean ExplosionInFluid = false;
+    public static boolean explosionInFluid = false;
+    @Rule(
+            desc = "disable villager jockeys",
+            category = {DRC,EXPERIMENTAL,SURVIVAL}
+    )
+    public static boolean disableVillagerJockey = false;
 }

@@ -10,11 +10,11 @@ import org.spongepowered.asm.mixin.injection.ModifyConstant;
 public class TntEntityMixin {
     @ModifyConstant(method = "explode",constant = @Constant(floatValue = 4.0F))
     private float injectedpower(float constant){
-        return (float) DRCAdditionSettings.TntExplosionPower;
+        return (float) DRCAdditionSettings.tntExplosionPower;
     }
 
     @ModifyConstant(method = "<init>(Lnet/minecraft/world/World;DDDLnet/minecraft/entity/LivingEntity;)V",constant = @Constant(intValue = 80))
     private int injectedfusetime(int constant){
-        return (int) DRCAdditionSettings.TntFuseTime;
+        return (int) DRCAdditionSettings.tntFuseTime;
     }
 }
