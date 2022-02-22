@@ -92,4 +92,14 @@ public class DRCAdditionSettings
             category = {DRC,EXPERIMENTAL,SURVIVAL}
     )
     public static boolean disableVillagerJockey = false;
+    @Rule(
+            desc = "Highlight Entities",
+            category = {DRC,EXPERIMENTAL,CREATIVE}
+    )
+    public static boolean highlightEntity = false;
+    @Rule(
+            desc = "Locate players",
+            category = {DRC,SURVIVAL}
+    )
+    public static boolean locateplayer = false;
 }
