@@ -9,7 +9,7 @@ import static com.github.Primeppzi.DRCAdditionSettings.witherskullchance;
 @Mixin(WitherEntity.class)
 public class WitherMixin {
 
-    @ModifyConstant(method = "shootSkullAt(ILnet/minecraft/entity/LivingEntity;)V",constant = @Constant(floatValue = 0.001F))
+    @ModifyConstant(method = "method_6878",constant = @Constant(floatValue = 0.001F))
     private float injected(float constant){
         return (float) witherskullchance;
     }

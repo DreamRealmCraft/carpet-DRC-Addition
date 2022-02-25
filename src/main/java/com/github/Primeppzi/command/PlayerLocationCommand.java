@@ -49,14 +49,14 @@ public class PlayerLocationCommand {
     private static ServerPlayerEntity getPlayer(CommandContext<ServerCommandSource> context)
     {
         String playerName = StringArgumentType.getString(context, "player");
-        MinecraftServer server = context.getSource().getServer();
+        MinecraftServer server = context.getSource().getMinecraftServer();
         return server.getPlayerManager().getPlayer(playerName);
     }
 
     private static int location(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
         PlayerEntity player =getPlayer(context);
         String coordinate = "§3[x: "+player.getBlockPos().getX()+"  y: "+player.getBlockPos().getY()+"  Z: "+player.getBlockPos().getZ()+"§f]";
-        String dimension = player.getWorld().getRegistryKey().getValue().toString();
+        String dimension = player.getEntityWorld().getRegistryKey().getValue().toString();
         Messenger.m(context.getSource(),"g ===================");
         Messenger.m(context.getSource(),"w "+getPlayer(context).getName().asString()+" is at"+coordinate);
         Messenger.m(context.getSource(),"w Dimension: §b"+dimension);

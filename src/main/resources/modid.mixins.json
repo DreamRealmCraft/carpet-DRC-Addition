@@ -4,9 +4,6 @@
   "package": "com.github.Primeppzi.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "GlowSquidEntityMixin",
-    "ExperienceOrbEntityMixin",
-    "GlowingBerriesMixin",
     "WitherMixin",
     "BiomeMixin",
     "TntEntityMixin",
