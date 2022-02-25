@@ -3,17 +3,17 @@
   "id": "modid",
   "version": "1.0.3",
 
-  "name": "Example Mod",
+  "name": "Carpet DRC Addition",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "Prime_ppzi"
   ],
   "contact": {
-    "homepage": "https://space.bilibili.com/483391030",
-    "sources": "https://github.com/Prime-ppzi?tab=repositories"
+    "homepage": "https://space.bilibili.com/510146909",
+    "sources": "https://github.com/DreamRealmCraft/carpet-DRC-Addition"
   },
 
-  "license": "CC0-1.0",
+  "license": "MPL-2.0",
   "icon": "assets/modid/icon.png",
 
   "environment": "*",
