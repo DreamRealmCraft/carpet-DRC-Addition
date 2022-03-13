@@ -10,7 +10,8 @@
     "WitherMixin",
     "BiomeMixin",
     "TntEntityMixin",
-    "VillagerEntityMixin"
+    "VillagerEntityMixin",
+    "AxolotlEntityMixin"
 
   ],
   "client": [

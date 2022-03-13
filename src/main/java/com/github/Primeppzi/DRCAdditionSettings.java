@@ -102,4 +102,22 @@ public class DRCAdditionSettings
             category = {DRC,SURVIVAL}
     )
     public static boolean locateplayer = false;
+    @Rule(
+            desc = "Use the worldspawn rule in 1.17-",
+            category = {DRC,SURVIVAL}
+    )
+    public static boolean oldworldspawn = false;
+    @Rule(
+            desc = "Can feed axolotol with tropic fish item",
+            category = {DRC,EXPERIMENTAL}
+    )
+    public static boolean easierAxolotlFeed = false;
+    @Rule(
+            desc = "Chance of breeding a blue axolotl",
+            category = {DRC,EXPERIMENTAL,CREATIVE},
+            options = {"0","0.000833","1"},
+            validate = Validator.PROBABILITY.class,
+            strict = false
+    )
+    public static double blueAxolotlChance = 0.000833;
 }
