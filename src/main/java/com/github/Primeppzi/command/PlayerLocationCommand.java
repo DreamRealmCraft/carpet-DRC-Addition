@@ -18,6 +18,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.World;
 
 import javax.xml.stream.Location;
 import java.util.Arrays;
@@ -56,10 +57,26 @@ public class PlayerLocationCommand {
     private static int location(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
         PlayerEntity player =getPlayer(context);
         String coordinate = "§3[x: "+player.getBlockPos().getX()+"  y: "+player.getBlockPos().getY()+"  Z: "+player.getBlockPos().getZ()+"§f]";
-        String dimension = player.getWorld().getRegistryKey().getValue().toString();
+        RegistryKey<World> registryKey = player.getWorld().getRegistryKey();
+        String dimension;
         Messenger.m(context.getSource(),"g ===================");
-        Messenger.m(context.getSource(),"w "+getPlayer(context).getName().asString()+" is at"+coordinate);
-        Messenger.m(context.getSource(),"w Dimension: §b"+dimension);
+        if(registryKey == World.OVERWORLD){
+            dimension = "Overworld";
+            Messenger.m(context.getSource(),"w "+getPlayer(context).getName().asString()+" is at\n"+coordinate);
+            Messenger.m(context.getSource(),"w Dimension: §b"+dimension);
+            Messenger.m(context.getSource(),"w §a Nether coordinate:\n"+"§3[x: "+player.getBlockPos().getX()/8+"  y: "+player.getBlockPos().getY()/8+"  Z: "+player.getBlockPos().getZ()/8+"§f]");
+        }
+        if (registryKey == World.NETHER){
+            dimension = "Nether";
+            Messenger.m(context.getSource(),"w "+getPlayer(context).getName().asString()+" is at\n"+coordinate);
+            Messenger.m(context.getSource(),"w Dimension: §a"+dimension);
+            Messenger.m(context.getSource(),"w §b Overworld coordinate:\n"+"§3[x: "+player.getBlockPos().getX()*8+"  y: "+player.getBlockPos().getY()*8+"  Z: "+player.getBlockPos().getZ()*8+"§f]");
+        }
+        if(registryKey == World.END){
+            dimension = "End";
+            Messenger.m(context.getSource(),"w "+getPlayer(context).getName().asString()+" is at\n"+coordinate);
+            Messenger.m(context.getSource(),"w Dimension: §5"+dimension);
+        }
         return 0;
     }
 }

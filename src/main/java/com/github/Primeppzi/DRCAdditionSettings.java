@@ -83,11 +83,6 @@ public class DRCAdditionSettings
     )
     public static double tntFuseTime = 80;
     @Rule(
-            desc = "explosion in fluid",
-            category = {DRC,EXPERIMENTAL,CREATIVE}
-    )
-    public static boolean explosionInFluid = false;
-    @Rule(
             desc = "disable villager jockeys",
             category = {DRC,EXPERIMENTAL,SURVIVAL}
     )
