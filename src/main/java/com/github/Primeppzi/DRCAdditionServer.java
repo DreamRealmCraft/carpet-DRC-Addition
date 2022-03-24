@@ -2,14 +2,12 @@ package com.github.Primeppzi;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
-import com.github.Primeppzi.command.HighlightCommand;
+import com.github.Primeppzi.command.ExtraPlayerCommand;
 import com.github.Primeppzi.command.PlayerLocationCommand;
 import com.github.Primeppzi.command.WeatherCommand;
 import com.mojang.brigadier.CommandDispatcher;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.server.command.ServerCommandSource;
-
-import java.awt.event.HierarchyListener;
 
 public class DRCAdditionServer implements CarpetExtension, ModInitializer
 {
@@ -42,6 +40,6 @@ public class DRCAdditionServer implements CarpetExtension, ModInitializer
         // here goes extra stuff
         WeatherCommand.register(dispatcher);
         PlayerLocationCommand.register(dispatcher);
-        HighlightCommand.register(dispatcher);
+        ExtraPlayerCommand.register(dispatcher);
     }
 }

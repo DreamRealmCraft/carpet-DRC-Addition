@@ -59,7 +59,7 @@ public class PlayerLocationCommand {
         String coordinate = "§3[x: "+player.getBlockPos().getX()+"  y: "+player.getBlockPos().getY()+"  Z: "+player.getBlockPos().getZ()+"§f]";
         RegistryKey<World> registryKey = player.getWorld().getRegistryKey();
         String dimension;
-        Messenger.m(context.getSource(),"g ===================");
+        Messenger.m(context.getSource(),"g ====================");
         if(registryKey == World.OVERWORLD){
             dimension = "Overworld";
             Messenger.m(context.getSource(),"w "+getPlayer(context).getName().asString()+" is at\n"+coordinate);

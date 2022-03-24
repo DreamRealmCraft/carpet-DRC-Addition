@@ -101,11 +101,6 @@ public class DRCAdditionSettings
             desc = "Use the worldspawn rule in 1.17-",
             category = {DRC,SURVIVAL}
     )
-    public static boolean oldworldspawn = false;
-    @Rule(
-            desc = "Can feed axolotol with tropic fish item",
-            category = {DRC,EXPERIMENTAL}
-    )
     public static boolean easierAxolotlFeed = false;
     @Rule(
             desc = "Chance of breeding a blue axolotl",
@@ -115,4 +110,9 @@ public class DRCAdditionSettings
             strict = false
     )
     public static double blueAxolotlChance = 0.000833;
+    @Rule(
+            desc = "Spawn multiple fake players",
+            category = {DRC,SURVIVAL}
+    )
+    public static boolean multiplePlayerSpawning = false;
 }
