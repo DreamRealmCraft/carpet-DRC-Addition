@@ -1,5 +1,7 @@
 package com.github.Primeppzi.command;
 
+import carpet.fakes.ServerPlayerEntityInterface;
+import carpet.helpers.EntityPlayerActionPack;
 import carpet.settings.SettingsManager;
 import carpet.utils.Messenger;
 import com.github.Primeppzi.DRCAdditionSettings;
@@ -13,6 +15,8 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.command.CommandSource;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -38,22 +42,43 @@ public class ExtraPlayerCommand {
                 .then((argument("number", IntegerArgumentType.integer()).suggests((c, b)->
                 {return CommandSource.suggestMatching(new String[]{"1","3","6","10"},b);
                 }).executes(ExtraPlayerCommand::spawn))))
-                        .then(literal("kill").then((argument("number", IntegerArgumentType.integer()).suggests((c, b)->
-                        {return CommandSource.suggestMatching(new String[]{"1","3","6","10"},b);
-                        }).executes(ExtraPlayerCommand::kill)))));
+                        .then(literal("kill").executes(ExtraPlayerCommand::kill))
+                        .then(literal("unload").executes(ExtraPlayerCommand::unload)));
 
         dispatcher.register(command);
     }
 
-
-    private static int kill(CommandContext<ServerCommandSource> context) {
-        int integer = IntegerArgumentType.getInteger(context,"number");
-        for (int i = 1; i <= integer; i++) {
+    private static int unload(CommandContext<ServerCommandSource> context) {
+        for (int i = 1;true;i++) {
             String playerName = StringArgumentType.getString(context,"prefix")+i;
             MinecraftServer server = ((ServerCommandSource)context.getSource()).getServer();
-            server.getPlayerManager().getPlayer(playerName).kill();
+            if(server.getPlayerManager().getPlayer(playerName) == null){
+                return 1;
+            }
+            EntityPlayerActionPack ap = ((ServerPlayerEntityInterface)server.getPlayerManager().getPlayer(playerName)).getActionPack();
+            ap.drop(-2,true);
+
         }
-        return 1;
+        /*String playerName = StringArgumentType.getString(context,"prefix");
+        MinecraftServer server = ((ServerCommandSource)context.getSource()).getServer();
+        EntityPlayerActionPack ap = ((ServerPlayerEntityInterface)server.getPlayerManager().getPlayer(playerName)).getActionPack();
+        ap.drop(-2,true);
+        Messenger.m(context.getSource(),"w "+ap.toString());
+        return 1;*/
+    }
+
+
+
+    private static int kill(CommandContext<ServerCommandSource> context) {
+        for (int i = 1;true;i++) {
+            String playerName = StringArgumentType.getString(context,"prefix")+i;
+            MinecraftServer server = ((ServerCommandSource)context.getSource()).getServer();
+            if(server.getPlayerManager().getPlayer(playerName) == null){
+                return 1;
+            }
+            server.getPlayerManager().getPlayer(playerName).kill();
+
+        }
     }
 
 
