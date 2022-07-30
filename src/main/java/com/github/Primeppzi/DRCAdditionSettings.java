@@ -1,8 +1,7 @@
 package com.github.Primeppzi;
-import carpet.settings.ParsedRule;
+
 import carpet.settings.Rule;
 import carpet.settings.Validator;
-import net.minecraft.server.command.ServerCommandSource;
 
 import static carpet.settings.RuleCategory.*;
 

@@ -22,7 +22,7 @@ import java.util.Random;
 @Mixin(GlowSquidEntity.class)
 public class GlowSquidEntityMixin {
     @Inject(method = "canSpawn",at = @At("RETURN"),cancellable = true)
-    private static void injected(EntityType<? extends LivingEntity> type, ServerWorldAccess world, SpawnReason reason, BlockPos pos, Random random, CallbackInfoReturnable<Boolean> cir) {
+    private static void injected(EntityType<? extends LivingEntity> type, ServerWorldAccess world, SpawnReason reason, BlockPos pos, net.minecraft.util.math.random.Random random, CallbackInfoReturnable<Boolean> cir) {
         if(DRCAdditionSettings.glowSquidRestriction) {
             boolean i = hasNoLight(world, pos) && hasStoneFloor(pos, world) && world.getBlockState(pos).isOf(Blocks.WATER) && pos.getY() <= world.getSeaLevel() - 33;
             cir.setReturnValue(i);

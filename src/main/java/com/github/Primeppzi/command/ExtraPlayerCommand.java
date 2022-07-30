@@ -83,6 +83,7 @@ public class ExtraPlayerCommand {
 
 
     private static int spawn(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
+
         int playernumber = spawnnumber(context);
         PlayerCommandHelper.spawn(context,playernumber);
 

@@ -7,6 +7,7 @@ import com.github.Primeppzi.command.PlayerLocationCommand;
 import com.github.Primeppzi.command.WeatherCommand;
 import com.mojang.brigadier.CommandDispatcher;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class DRCAdditionServer implements CarpetExtension, ModInitializer
@@ -35,7 +36,7 @@ public class DRCAdditionServer implements CarpetExtension, ModInitializer
         CarpetServer.settingsManager.parseSettingsClass(DRCAdditionSettings.class);
     }
     @Override
-    public void registerCommands(CommandDispatcher<ServerCommandSource> dispatcher)
+    public void registerCommands(CommandDispatcher<ServerCommandSource> dispatcher, CommandRegistryAccess commandRegistryAccess)
     {
         // here goes extra stuff
         WeatherCommand.register(dispatcher);

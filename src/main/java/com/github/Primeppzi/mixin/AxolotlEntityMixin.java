@@ -28,9 +28,8 @@ public abstract class AxolotlEntityMixin {
     /**
      * @author Prime_ppzi
      */
-    @Overwrite
+    //@Overwrite
     private static boolean shouldBabyBeDifferent(Random random) {
         return random.nextFloat() < DRCAdditionSettings.blueAxolotlChance;
     }
-
 }

@@ -3,10 +3,11 @@ package com.github.Primeppzi.command;
 import carpet.settings.SettingsManager;
 import com.github.Primeppzi.DRCAdditionSettings;
 import com.mojang.brigadier.CommandDispatcher;
+import com.mojang.brigadier.LiteralMessage;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import net.minecraft.util.Util;
 import net.minecraft.world.World;
 
@@ -21,7 +22,8 @@ public class WeatherCommand {
                     ServerPlayerEntity playerEntity = c.getSource().getPlayer();
                     String weather = weatheridentify(c.getSource());
                     while(DRCAdditionSettings.tellweather == true){
-                        playerEntity.sendSystemMessage(new LiteralText("§7Weather is: "+weather),Util.NIL_UUID);
+                        c.getSource().sendFeedback(Text.literal("§7Weather is: "+weather),false);
+                        //playerEntity.sendMessage(new LiteralMessage("§7Weather is: "+weather),Util.NIL_UUID);
                         return 1;
                     }
                     return 1;
