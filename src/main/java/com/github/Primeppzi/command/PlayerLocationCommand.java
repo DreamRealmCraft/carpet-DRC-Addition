@@ -64,13 +64,13 @@ public class PlayerLocationCommand {
             dimension = "Overworld";
             Messenger.m(context.getSource(),"w "+getPlayer(context).getName().toString()+" is at\n"+coordinate);
             Messenger.m(context.getSource(),"w Dimension: §b"+dimension);
-            Messenger.m(context.getSource(),"w §a Nether coordinate:\n"+"§3[x: "+player.getBlockPos().getX()/8+"  y: "+player.getBlockPos().getY()/8+"  Z: "+player.getBlockPos().getZ()/8+"§f]");
+            Messenger.m(context.getSource(),"w §a Nether coordinate:\n"+"§3[x: "+player.getBlockPos().getX()/8+"  y: "+player.getBlockPos().getY()+"  Z: "+player.getBlockPos().getZ()/8+"§f]");
         }
         if (registryKey == World.NETHER){
             dimension = "Nether";
             Messenger.m(context.getSource(),"w "+getPlayer(context).getName().toString()+" is at\n"+coordinate);
             Messenger.m(context.getSource(),"w Dimension: §a"+dimension);
-            Messenger.m(context.getSource(),"w §b Overworld coordinate:\n"+"§3[x: "+player.getBlockPos().getX()*8+"  y: "+player.getBlockPos().getY()*8+"  Z: "+player.getBlockPos().getZ()*8+"§f]");
+            Messenger.m(context.getSource(),"w §b Overworld coordinate:\n"+"§3[x: "+player.getBlockPos().getX()*8+"  y: "+player.getBlockPos().getY()+"  Z: "+player.getBlockPos().getZ()*8+"§f]");
         }
         if(registryKey == World.END){
             dimension = "End";

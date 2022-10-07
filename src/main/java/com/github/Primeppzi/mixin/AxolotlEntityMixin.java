@@ -26,10 +26,15 @@ public abstract class AxolotlEntityMixin {
         }
     }
     /**
-     * @author Prime_ppzi
+     * @author
+     * @reason
      */
     //@Overwrite
     private static boolean shouldBabyBeDifferent(Random random) {
         return random.nextFloat() < DRCAdditionSettings.blueAxolotlChance;
+    }
+    @Inject(method = "shouldBabyBeDifferent", at = @At("HEAD"), cancellable = true)
+    private static void injected(net.minecraft.util.math.random.Random random, CallbackInfoReturnable<Boolean> cir) {
+        cir.setReturnValue(random.nextFloat() < DRCAdditionSettings.blueAxolotlChance);
     }
 }

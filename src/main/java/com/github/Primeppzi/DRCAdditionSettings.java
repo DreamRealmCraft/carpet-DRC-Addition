@@ -3,7 +3,7 @@ package com.github.Primeppzi;
 import carpet.settings.Rule;
 import carpet.settings.Validator;
 
-import static carpet.settings.RuleCategory.*;
+import static carpet.api.settings.RuleCategory.*;
 
 
 /**
